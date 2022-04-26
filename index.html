@@ -253,7 +253,56 @@
         <sub>Psst... We do not have enough money yet!</sub>
       </div>
     </div>
+    
+  <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      var subModal = document.getElementById("subModal");
+      var downMod = document.getElementById("downModal")
+      
+      // Get the button that opens the modal
+      var btn = document.getElementsByClassName("signup");
+      var down = document.getElementsByClassName("download");
+      var submit = document.getElementById("submit");
+      var span = document.getElementsByClassName("close");
 
+      // When the user clicks the button, open the modal 
+      for(var i = 0; i < btn.length; i++){
+      btn[i].onclick = function () {
+        modal.style.display = "block";
+      }
+    }
+
+      submit.onclick = function () {
+        modal.style.display = "none";
+        subModal.style.display = "block";
+      }
+
+      for(var i = 0; i < down.length; i++){
+      down[i].onclick = function () {
+        downMod.style.display = "block";
+      }
+    }
+      
+
+      // When the user clicks on <span> (x), close the modal
+        for(var i = 0; i < span.length; i++){
+          span[i].onclick = function () {
+        modal.style.display = "none";
+        subModal.style.display = "none";
+        downMod.style.display = "none";
+      }
+    }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal || event.target == subModal || event.target == downMod) {
+          modal.style.display = "none";
+          subModal.style.display = "none";
+          downMod.style.display = "none";
+        }
+      }
+    </script>
 
 </body>
 
